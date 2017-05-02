@@ -23,15 +23,17 @@ function listPosts(response){
 			console.log(categories);
 		}) 
 		postContainer.innerHTML += "<div class='post post" + i + "'><div class='img img" + i + "'></div><div class='text'><div class='date'>" + post.date + "</div><h2 class='postTitle'>" + post.title + "</h2><hr><div class='category'>" + categories + "</div>";
+		addImg(post.img,i);
+		// setTimeout(addImg(post.img, i), 1);
 		i += 1;
-		setTimeout(addImg(post.img, i), 100);
 	})
 }
 
 function addImg(img, num){
-	var imgDiv = document.getElementsByClassName("img" + num)[0];
-	imgDiv.style.backgroundImage = "url('" + img + "')";
+	var imgDiv = document.getElementsByClassName("img")[num];
 	console.log(imgDiv);
+	imgDiv.style.backgroundImage = "url('" + img + "')";
+	console.log("addImg");
 };
 
 
